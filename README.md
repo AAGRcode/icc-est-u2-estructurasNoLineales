@@ -17,5 +17,7 @@ Cree la clase Node que sirve como nodo para el arbol binario tiene el valor y lo
 ### Descripcion:
 En esta clase terminamos de hacer lo de los recorridos en orden preorden inorden y posorden tambien tiene metodos para sacar la altura y el peso del arbol. Luego cree la clase Persona con nombre y edad y la hice comparable para que se pueda ordenar primero por edad y si tienen la misma edad por nombre tambien cree la clase BinaryTree que es parecida a IntTree pero sirve para cualquier tipo de dato que se pueda comparar incluyendo los objetos Persona y tiene los mismos metodos de recorrido y de altura y pesona
 ### Codigo: 
+![alt text](image-2.png)
+![alt text](image-3.png)
 ### Salida en consola: 
-
+![alt text](image-4.png)
