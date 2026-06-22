@@ -1,11 +1,30 @@
 import models.Persona;
 import structures.node.Node;
 import structures.trees.BinaryTree;
+import structures.trees.Ejercicio1;
+import structures.trees.Ejercicio2;
 import structures.trees.IntTree;
 
 public class App {
     public static void main(String[] args) throws Exception {
         runIntTree();
+        runBinaryTree();
+        runEjercicios();
+    }
+
+    private static void runEjercicios() {
+        Ejercicio1 ejercicio1 = new Ejercicio1();
+        int[] numeros = new int[] {5, 3, 7, 2, 4, 6, 8};
+        ejercicio1.insert(numeros);  
+        System.out.println();
+        Ejercicio2 ejercicio2 = new Ejercicio2();
+        int[] numerosDos = new int[] {5, 3, 7, 2, 4, 6, 8};
+        BinaryTree<Integer> arbolDos = new BinaryTree<>();
+        for (int numero : numerosDos) {
+            arbolDos.add(numero);
+        }
+        Node<Integer> root = arbolDos.getRoot();
+        ejercicio2.invertTree(root);
     }
 
     private static void runIntTree() {
