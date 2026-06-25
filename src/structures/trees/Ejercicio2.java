@@ -11,9 +11,9 @@ public class Ejercicio2 {
         if(actual == null){
             return null;
         }
-        
+        Node<Integer> aux = actual.getLeft();
         actual.setLeft(invertTreeRecursivo(actual.getRight()));
-        actual.setRight(invertTreeRecursivo(actual.getLeft()));
+        actual.setRight(invertTreeRecursivo(aux));
         return actual;
     }
 

@@ -3,6 +3,8 @@ import structures.node.Node;
 import structures.trees.BinaryTree;
 import structures.trees.Ejercicio1;
 import structures.trees.Ejercicio2;
+import structures.trees.Ejercicio3;
+import structures.trees.Ejercicio4;
 import structures.trees.IntTree;
 
 public class App {
@@ -14,17 +16,90 @@ public class App {
 
     private static void runEjercicios() {
         Ejercicio1 ejercicio1 = new Ejercicio1();
-        int[] numeros = new int[] {5, 3, 7, 2, 4, 6, 8};
-        ejercicio1.insert(numeros);  
-        System.out.println();
         Ejercicio2 ejercicio2 = new Ejercicio2();
-        int[] numerosDos = new int[] {5, 3, 7, 2, 4, 6, 8};
-        BinaryTree<Integer> arbolDos = new BinaryTree<>();
-        for (int numero : numerosDos) {
-            arbolDos.add(numero);
+        Ejercicio3 ejercicio3 = new Ejercicio3();
+        Ejercicio4 ejercicio4 = new Ejercicio4();
+
+        System.out.println("Ejercicio 1: Arbol vacio");
+        ejercicio1.insert(new int[]{});
+
+        System.out.println("Ejercicio 1: Un solo nodo");
+        ejercicio1.insert(new int[]{5});
+
+        System.out.println("Ejercicio 1: Varios niveles");
+        ejercicio1.insert(new int[]{5, 3, 7, 2, 4, 6, 8});
+
+        System.out.println("Ejercicio 1: Solo hacia la derecha");
+        ejercicio1.insert(new int[]{1, 2, 3, 4});
+        System.out.println();
+
+        System.out.println("Ejercicio 2: Arbol vacio");
+        ejercicio2.invertTree(null);
+
+        System.out.println("Ejercicio 2: Un solo nodo");
+        BinaryTree<Integer> arbolDosUno = new BinaryTree<>();
+        arbolDosUno.add(5);
+        ejercicio2.invertTree(arbolDosUno.getRoot());
+
+        System.out.println("Ejercicio 2: Varios niveles");
+        BinaryTree<Integer> arbolDosDos = new BinaryTree<>();
+        for (int numero : new int[]{5, 3, 7, 2, 4, 6, 8}) {
+            arbolDosDos.add(numero);
         }
-        Node<Integer> root = arbolDos.getRoot();
-        ejercicio2.invertTree(root);
+        ejercicio2.invertTree(arbolDosDos.getRoot());
+
+        System.out.println("Ejercicio 2: Solo hacia la derecha");
+        BinaryTree<Integer> arbolDosTres = new BinaryTree<>();
+        for (int numero : new int[]{1, 2, 3, 4}) {
+            arbolDosTres.add(numero);
+        }
+        ejercicio2.invertTree(arbolDosTres.getRoot());
+        System.out.println();
+
+        System.out.println("Ejercicio 3: Arbol vacio");
+        ejercicio3.mostrarLevels(null);
+
+        System.out.println("Ejercicio 3: Un solo nodo");
+        BinaryTree<Integer> arbolTresUno = new BinaryTree<>();
+        arbolTresUno.add(5);
+        ejercicio3.mostrarLevels(arbolTresUno.getRoot());
+
+        System.out.println("Ejercicio 3: Varios niveles");
+        BinaryTree<Integer> arbolTresDos = new BinaryTree<>();
+        for (int numero : new int[]{4, 2, 7, 1, 3, 6, 9}) {
+            arbolTresDos.add(numero);
+        }
+        ejercicio3.mostrarLevels(arbolTresDos.getRoot());
+
+        System.out.println("Ejercicio 3: Solo hacia la derecha");
+        BinaryTree<Integer> arbolTresTres = new BinaryTree<>();
+        for (int numero : new int[]{1, 2, 3, 4}) {
+            arbolTresTres.add(numero);
+        }
+        ejercicio3.mostrarLevels(arbolTresTres.getRoot());
+        System.out.println();
+
+        System.out.println("Ejercicio 4: Arbol vacio");
+        ejercicio4.mostrarMaxDepth(null);
+
+        System.out.println("Ejercicio 4: Un solo nodo");
+        BinaryTree<Integer> arbolCuatroUno = new BinaryTree<>();
+        arbolCuatroUno.add(5);
+        ejercicio4.mostrarMaxDepth(arbolCuatroUno.getRoot());
+
+        System.out.println("Ejercicio 4: Varios niveles");
+        BinaryTree<Integer> arbolCuatroDos = new BinaryTree<>();
+        for (int numero : new int[]{5, 3, 7, 2, 4, 6, 8}) {
+            arbolCuatroDos.add(numero);
+        }
+        ejercicio4.mostrarMaxDepth(arbolCuatroDos.getRoot());
+
+        System.out.println("Ejercicio 4: Solo hacia la derecha");
+        BinaryTree<Integer> arbolCuatroTres = new BinaryTree<>();
+        for (int numero : new int[]{1, 2, 3, 4}) {
+            arbolCuatroTres.add(numero);
+        }
+        ejercicio4.mostrarMaxDepth(arbolCuatroTres.getRoot());
     }
 
     private static void runIntTree() {
